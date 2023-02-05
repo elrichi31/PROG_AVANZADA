@@ -1,0 +1,4 @@
+
+123456789,Java para principiantes,John Doe,3,05/01/2020,Programación,Java,Diseño,Redes,30.0
+234567890,Redes informáticas,Jane Doe,2,01/02/2022,Redes,Programación,Seguridad,50.0
+345678901,Diseño gráfico,Jim Smith,1,10/05/2021,Diseño,Photoshop,Ilustrador,35.0
