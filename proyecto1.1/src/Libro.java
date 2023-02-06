@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Date;
-import java.text.SimpleDateFormat;
 
 public class Libro {
     private String ISBN;
@@ -11,6 +10,9 @@ public class Libro {
     private ArrayList<String> palabrasClaves;
     private double precio;
 
+    public Libro(){
+
+    }
     public Libro(String ISBN, String titulo, String autor, int numEdiciones, Date ultEdicion, ArrayList<String> palabrasClaves, double precio) {
         this.ISBN = ISBN;
         this.titulo = titulo;
@@ -21,9 +23,11 @@ public class Libro {
         this.precio = precio;
     }
 
+    
+
     public void traverse(){
-        System.out.println("ISBN: " + this.ISBN + ", Titulo: " + this.titulo + ", Autor: " + this.autor + ", Numero de ediciones: " +
-                this.numEdiciones + ", Fecha de ultima edicion: " + this.ultEdicion +
+        System.out.println("ISBN: " + this.ISBN + ", Titulo: " + this.titulo + ", Autor: " + this.autor + ", Nro de ediciones: " +
+                this.numEdiciones + ", Ultima edicion: " + this.ultEdicion +
                 ", Palabras clave: " + this.palabrasClaves + ", Precio: " + this.precio);
     }
     public String getISBN() {
