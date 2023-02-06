@@ -1,19 +1,18 @@
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Libro {
     private String ISBN;
     private String titulo;
     private String autor;
     private int numEdiciones;
-    private Date ultEdicion;
+    private String ultEdicion;
     private ArrayList<String> palabrasClaves;
     private double precio;
 
     public Libro(){
 
     }
-    public Libro(String ISBN, String titulo, String autor, int numEdiciones, Date ultEdicion, ArrayList<String> palabrasClaves, double precio) {
+    public Libro(String ISBN, String titulo, String autor, int numEdiciones, String ultEdicion, ArrayList<String> palabrasClaves, double precio) {
         this.ISBN = ISBN;
         this.titulo = titulo;
         this.autor = autor;
@@ -22,8 +21,6 @@ public class Libro {
         this.palabrasClaves = palabrasClaves;
         this.precio = precio;
     }
-
-    
 
     public void traverse(){
         System.out.println("ISBN: " + this.ISBN + ", Titulo: " + this.titulo + ", Autor: " + this.autor + ", Nro de ediciones: " +
@@ -62,11 +59,11 @@ public class Libro {
         this.numEdiciones = numEdiciones;
     }
 
-    public Date getUltEdicion() {
+    public String getUltEdicion() {
         return ultEdicion;
     }
 
-    public void setUltimaEdicion(Date ultEdicion) {
+    public void setUltimaEdicion(String ultEdicion) {
         this.ultEdicion = ultEdicion;
     }
 

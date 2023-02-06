@@ -9,13 +9,14 @@ import java.util.stream.Collectors;
 public class Controller {
     // Pregunta 2
     public void imprimirLibros(ArrayList<Libro> listaLibros){
+        System.out.println("--------------Lista de libros---------------");
         listaLibros.forEach(e -> {
             e.traverse();
         });
     }
     // Pregunta 4
     public void imprimirAutor(List<Libro> listaLibros) {
-        System.out.println("-----------------------------");
+        System.out.println("--------------Ordenado por Autor---------------");
         listaLibros.sort(Comparator.comparing(Libro::getAutor));
         listaLibros.forEach(libro -> {
             ArrayList<String> palabrasKey = libro.getPalabrasClaves();
@@ -24,25 +25,14 @@ public class Controller {
             libro.traverse();
         });
     }
-
-    // public static void imprimirLibrosAgrupadosPorAnioEdicion(List<Libro> listaLibros) {
-    //     Map<Year, List<Libro>> librosAgrupadosPorAnioEdicion = listaLibros.stream()
-    //             .collect(Collectors.groupingBy(l -> Year.parse(l.ultEdicion().split("/")[2])));
-    //     librosAgrupadosPorAnioEdicion.forEach((anio, libros) -> {
-    //         System.out.println("Año de Edición: " + anio.getValue());
-    //         libros.sort(Comparator.comparing(Libro::getTitulo));
-    //         libros.forEach(l -> {
-    //             System.out.println("\tISBN: " + l.getISBN());
-    //             System.out.println("\tTitulo: " + l.getTitulo());
-    //             System.out.println("\tAutor: " + l.getAutor());
-    //             System.out.println("\tEdiciones: " + l.getNumEdiciones());
-    //             System.out.println("\tFecha Ultima Edicion: " + l.getUltEdicion());
-    //             System.out.println("\tPalabras Clave: ");
-    //             List<String> palabrasClave = l.getPalabrasClaves();
-    //             palabrasClave.forEach(pc -> System.out.println("\t\t" + pc));
-    //             System.out.println("\tPrecio: " + l.getPrecio());
-    //             System.out.println();
-    //         });
-    //     });
-    // }
+    //Pregunta 6
+    public void agrupadoPorYear(List<Libro> listaLibros) {
+        System.out.println("--------------Agrupado por Año---------------");
+        Map<Year, List<Libro>> agrupado = listaLibros.stream()
+                .collect(Collectors.groupingBy(l -> Year.parse(l.getUltEdicion().split("/")[2])));
+        agrupado.forEach((year, libros) -> {
+            libros.sort(Comparator.comparing(Libro::getTitulo));
+            libros.forEach(l -> l.traverse());
+        });
+    }
 }
