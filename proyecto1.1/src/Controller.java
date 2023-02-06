@@ -39,13 +39,14 @@ public class Controller {
     //Pregunta 5
     public void agrupadoPorAutor(List<Libro> listaLibros) {
         System.out.println("--------------Agrupado por Autor---------------");
-        Map<String, List<Libro>> agrupado = listaLibros.stream()
+    Map<String, List<Libro>> agrupado = listaLibros.stream()
                 .collect(Collectors.groupingBy(l -> l.getAutor()));
-        agrupado.forEach((autor, libros) -> {
-            System.out.println("Autor: " + autor);
-            libros.sort(Comparator.comparing(Libro::getUltEdicion));
-            libros.forEach(l -> l.traverse());
-        });
+            agrupado.keySet().stream().sorted().forEach(l -> {
+                System.out.println("Autor: " + l);
+                List<Libro> librosPorAutor = agrupado.get(l);
+                librosPorAutor.sort((l1, l2) -> l1.getAutor().compareTo(l2.getAutor()));
+                librosPorAutor.forEach(lib -> lib.traverse());
+            });
     }
     //Pregunta 6
     public void agrupadoPorYear(List<Libro> listaLibros) {

@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Libro> total = abrirLibro.leerLibros();
+        ArrayList<Libro> total = AbrirLibro.leerLibros();
         Controller c1 = new Controller();
         c1.imprimirLibros(total);
         c1.imprimirTitulo(total);

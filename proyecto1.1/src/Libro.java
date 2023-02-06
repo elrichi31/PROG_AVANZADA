@@ -10,7 +10,6 @@ public class Libro {
     private double precio;
 
     public Libro(){
-
     }
     public Libro(String ISBN, String titulo, String autor, int numEdiciones, String ultEdicion, ArrayList<String> palabrasClaves, double precio) {
         this.ISBN = ISBN;
