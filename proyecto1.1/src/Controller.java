@@ -14,6 +14,17 @@ public class Controller {
             e.traverse();
         });
     }
+    // Pregunta 3
+    public void imprimirTitulo(List<Libro> listaLibros) {
+        System.out.println("--------------Ordenado por Titulo---------------");
+        listaLibros.sort(Comparator.comparing(Libro::getTitulo));
+        listaLibros.forEach(libro -> {
+            ArrayList<String> palabrasKey = libro.getPalabrasClaves();
+            Collections.sort(palabrasKey, Comparator.naturalOrder());
+            libro.setPalabrasClaves(palabrasKey);
+            libro.traverse();
+        });
+    }
     // Pregunta 4
     public void imprimirAutor(List<Libro> listaLibros) {
         System.out.println("--------------Ordenado por Autor---------------");
@@ -25,14 +36,42 @@ public class Controller {
             libro.traverse();
         });
     }
+    //Pregunta 5
+    public void agrupadoPorAutor(List<Libro> listaLibros) {
+        System.out.println("--------------Agrupado por Autor---------------");
+        Map<String, List<Libro>> agrupado = listaLibros.stream()
+                .collect(Collectors.groupingBy(l -> l.getAutor()));
+        agrupado.forEach((autor, libros) -> {
+            System.out.println("Autor: " + autor);
+            libros.sort(Comparator.comparing(Libro::getUltEdicion));
+            libros.forEach(l -> l.traverse());
+        });
+    }
     //Pregunta 6
     public void agrupadoPorYear(List<Libro> listaLibros) {
         System.out.println("--------------Agrupado por Año---------------");
         Map<Year, List<Libro>> agrupado = listaLibros.stream()
                 .collect(Collectors.groupingBy(l -> Year.parse(l.getUltEdicion().split("/")[2])));
-        agrupado.forEach((year, libros) -> {
-            libros.sort(Comparator.comparing(Libro::getTitulo));
-            libros.forEach(l -> l.traverse());
+        agrupado.keySet().stream().sorted().forEach(l -> {
+            System.out.println("Year: " + l);
+            List<Libro> librosPorAnio = agrupado.get(l);
+            librosPorAnio.sort((l1, l2) -> l1.getTitulo().compareTo(l2.getTitulo()));
+            librosPorAnio.forEach(lib -> lib.traverse());
         });
+    }
+    //Pregunta 8
+    public void imprimirLibrosSinPalabrasIniciadasConP(List<Libro> listaLibros) {
+        System.out.println("--------------No tienen palabras que inician con \"P\"---------------");
+
+        listaLibros.stream()
+                .filter(libro -> libro.getPalabrasClaves().stream().noneMatch(palabra -> palabra.startsWith("P")))
+                .sorted((l1, l2) -> l1.getAutor().compareTo(l2.getAutor()))
+                .forEach(l -> {
+                    System.out.println("ISBN: " + l.getISBN());
+                    System.out.println("Titulo: " + l.getTitulo());
+                    System.out.println("Autor: " + l.getAutor());
+                    System.out.println("Palabras Clave: " + l.getPalabrasClaves());
+                    System.out.println();
+                });
     }
 }
