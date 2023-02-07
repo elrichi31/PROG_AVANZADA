@@ -8,6 +8,7 @@ public class Main {
         c1.imprimirAutor(total);
         c1.agrupadoPorAutor(total);
         c1.agrupadoPorYear(total);
+        c1.imprimirLibrosConPalabrasIniciadasConP(total);
         c1.imprimirLibrosSinPalabrasIniciadasConP(total);
     }
 }
