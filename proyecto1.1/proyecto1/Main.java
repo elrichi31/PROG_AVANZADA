@@ -12,7 +12,7 @@ public class Main {
     public static ArrayList<Libro> leerLibros(){
         ArrayList<Libro> totalLibros = new ArrayList<>();
         try {
-            BufferedReader br = new BufferedReader(new FileReader("src/libros.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("libros.txt"));
             br.lines().forEach(line -> {
                 String[] data = line.split(",");//data es un arreglo de strings que corresponde a cada libro del .txt
                 String ISBN = data[0];

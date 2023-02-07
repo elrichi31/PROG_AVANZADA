@@ -1,0 +1,12 @@
+123456789,Java para principiantes,John Doe,3,08/12/2020,Programación,Java,Diseño,Redes,30.0
+123456789,Programación para principiantes,John Doe,3,08/12/2020,Programación,Java,Diseño,Redes,30.0
+123456789,Arte de programar,Alex Morgan,3,22/04/2021,Programación,Python,Diseño,Investigacion,45.0
+123456789,Big notation,Bernard Madof,3,05/01/2020,Algoritmos,C++,Arquitectura,Eficiencia,20.0
+234567890,Redes informáticas,Jane Doe,2,01/02/2022,Redes,Programación,Seguridad,50.0
+345678901,Diseño gráfico,Adam Smith,1,10/09/2021,Diseño,Photoshop,Ilustrador,35.0
+9780140449116,Don Juan,Lord Byron,2,23/08/1819,Poesia,Romance,Satira,Erotismo,14.99
+9788466334823,El Aleph,Jorge Luis Borges,4,01/01/1949,Fantasia,Relato,Magia,Misterio,17.99
+9780140449116,Don Juan,Miguel de Cervantes,2,23/08/1819,Poesia,Romance,Satira,Erotismo,14.99
+9788466334823,La Gitanilla,Miguel de Cervantes,4,01/01/1949,Fantasia,Relato,Magia,Misterio,17.99
+9788466334823,La Gitanilla2,Miguel de Cervantes,4,01/01/1728,Fantasia,Relato,Magia,Misterio,17.99
+9788497934547,El retrato de Dorian Gray,Oscar Wilde,2,01/01/1890,Arte,Belleza,Vanity,Moral,16.99
