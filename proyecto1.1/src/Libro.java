@@ -9,6 +9,7 @@ public class Libro {
     private ArrayList<String> palabrasClaves;
     private double precio;
 
+    //contructor
     public Libro(){
     }
     public Libro(String ISBN, String titulo, String autor, int numEdiciones, String ultEdicion, ArrayList<String> palabrasClaves, double precio) {
@@ -21,11 +22,13 @@ public class Libro {
         this.precio = precio;
     }
 
+    //funcion traverse, definida para imprimir los datos de cada libro
     public void traverse(){
         System.out.println("ISBN: " + this.ISBN + ", Titulo: " + this.titulo + ", Autor: " + this.autor + ", Nro de ediciones: " +
                 this.numEdiciones + ", Ultima edicion: " + this.ultEdicion +
                 ", Palabras clave: " + this.palabrasClaves + ", Precio: " + this.precio);
     }
+    //funciones get y set de cada dato para cada libro
     public String getISBN() {
         return ISBN;
     }
@@ -66,6 +69,7 @@ public class Libro {
         this.ultEdicion = ultEdicion;
     }
 
+    //se maneja a las palabras clave como un ArrayList, con sus funciones set y get
     public ArrayList<String> getPalabrasClaves() {
         return palabrasClaves;
     }
