@@ -12,7 +12,7 @@ public class Main {
     public static ArrayList<Libro> leerLibros(){
         ArrayList<Libro> totalLibros = new ArrayList<>();
         try {
-            BufferedReader br = new BufferedReader(new FileReader("libros.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("src/libros.txt"));
             br.lines().forEach(line -> {
                 String[] data = line.split(",");
                 String ISBN = data[0];
@@ -72,6 +72,7 @@ public class Main {
                 System.out.println("Autor: " + l);
                 List<Libro> librosPorAutor = agrupado.get(l);
                 librosPorAutor.sort((l1, l2) -> l1.getAutor().compareTo(l2.getAutor()));
+                librosPorAutor.sort((l1, l2) -> Year.parse(l1.getUltEdicion().split("/")[2]).compareTo(Year.parse(l2.getUltEdicion().split("/")[2])));
                 librosPorAutor.forEach(lib -> lib.traverse());
             });
     }

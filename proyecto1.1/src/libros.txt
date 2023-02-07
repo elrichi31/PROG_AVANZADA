@@ -8,5 +8,5 @@
 9788466334823,El Aleph,Jorge Luis Borges,4,01/01/1949,Fantasia,Relato,Magia,Misterio,17.99
 9780140449116,Don Juan,Miguel de Cervantes,2,23/08/1819,Poesia,Romance,Satira,Erotismo,14.99
 9788466334823,La Gitanilla,Miguel de Cervantes,4,01/01/1949,Fantasia,Relato,Magia,Misterio,17.99
+9788466334823,La Gitanilla2,Miguel de Cervantes,4,01/01/1728,Fantasia,Relato,Magia,Misterio,17.99
 9788497934547,El retrato de Dorian Gray,Oscar Wilde,2,01/01/1890,Arte,Belleza,Vanity,Moral,16.99
-
